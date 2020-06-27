@@ -48,8 +48,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# Finnish keymap for my laptop
 setxkbmap fi &
+# Compositor
 picom &
+# Status bar
 slstatus &
+# WM
 exec dwm
 
