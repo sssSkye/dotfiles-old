@@ -1,10 +1,14 @@
+# I use gentoo on my laptop that I use for school so I launch neofetch on every new terminal to flex on them plebs
+neofetch
+
 # Exports
 export ZSH="/home/sskye/.oh-my-zsh"
-export CFLAGS="-O2 -pipe -march=native"
-export CXXFLAGS="${CFLAGS}"
-export MAKEFLAGS="-j4"
-export LANG="en_US.UTF-8"
 export EDITOR="vim"
+
+# Exports for non-gentoo installs 
+#export CFLAGS="-O2 -pipe -march=native"
+#export CXXFLAGS="${CFLAGS}"
+#export MAKEFLAGS="-j4"
 
 # History stuff
 HISTFILE=~/.histfile
@@ -31,7 +35,7 @@ alias vimrc="vim /home/sskye/.vimrc"
 alias zshrc="vim /home/sskye/.zshrc"
 alias ls="exa -a"
 alias l="exa -la"
-alias DARKNET="sudo wpa_supplicant -B -i wlo1 -c /etc/wpa_supplicant/wpa_supplicant.conf && sudo dhcpcd wlo1"
+alias cwifi="sudo wpa_supplicant -B -i wlp4s0 -c /etc/wpa_supplicant/wpa_supplicant.conf && sudo dhcpcd wlp4s0"
 alias c="clear"
 alias suckless="cd /home/sskye/builds/suckless/"
 
