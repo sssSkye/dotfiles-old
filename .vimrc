@@ -10,14 +10,19 @@ call plug#begin('/home/sskye/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
+augroup nord-theme-overrides
+    autocmd!
+    autocmd ColorScheme nord highlight Comment ctermfg=15 guifg=#ECEFF4
+augroup END
+
+colorscheme nord
+
 set history=500
 
 filetype plugin on
 filetype indent on
 
 syntax enable
-
-colorscheme nord
 
 set encoding=utf8
 
