@@ -49,7 +49,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # Wallpaper
-feh --bg-fill /home/sskye/walls/1951514.png &
+feh --bg-fill --randomize /home/sskye/walls/* &
 # Finnish keymap for my laptop
 setxkbmap fi &
 # Compositor
