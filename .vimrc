@@ -8,6 +8,8 @@ endif
 " Download plugins (install with :PlugInstall)
 call plug#begin('/home/sskye/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'stevearc/vim-arduino'
 call plug#end()
 
 augroup nord-theme-overrides
@@ -16,6 +18,24 @@ augroup nord-theme-overrides
 augroup END
 
 colorscheme nord
+
+" Arduino keybindings
+nnoremap <buffer> <leader>am :ArduinoVerify<CR>
+nnoremap <buffer> <leader>au :ArduinoUpload<CR>
+nnoremap <buffer> <leader>ad :ArduinoUploadAndSerial<CR>
+nnoremap <buffer> <leader>ab :ArduinoChooseBoard<CR>
+nnoremap <buffer> <leader>ap :ArduinoChooseProgrammer<CR>
+
+" my_file.ino [arduino:avr:uno] [arduino:usbtinyisp] (/dev/ttyACM0:9600)
+function! MyStatusLine()
+    let port = arduino#GetPort()
+    let line = '%f [' . g:arduino_board . '] [' . g:arduino_programmer . ']'
+    if !empty(port)
+        let line = line . ' (' . port . ':' . g:arduino_serial_baud . ')'
+    endif
+    return line
+endfunction
+setl statusline=%!MyStatusLine()
 
 set history=500
 
