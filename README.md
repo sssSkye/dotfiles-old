@@ -1,5 +1,5 @@
 dotfiles
 ========
 
-Just some of my dotfiles
+Old dotfiles. Keeping them just in case.
 
